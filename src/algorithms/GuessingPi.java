@@ -18,30 +18,32 @@ public class GuessingPi {
 		System.out.print(pi.charAt(0));
 		System.out.print(pi.charAt(1));
 		System.out.print(pi.charAt(2));
-		System.out.println(pi.charAt(3));
+		System.out.print(pi.charAt(3));
 		// 9. If you want to give the user more than one chance to guess,
 		//    put a for loop around steps 4-8.
 
 			// 4. Create a for loop that will step through each digit of pi (steps 5-8)
 			//    NOTE: The number of digits in your string will be
 			//       yourStringVariable.length()
-			for (int i = 4; i < 9; i++) {
+			for (int i = 4; i < pi.length(); i++) {
 				// 5. Ask the user for the NEXT digit of pi.
 				String value = JOptionPane.showInputDialog("Insert the next value of pi");
 				// 6. Compare the user's input to the next digit of your pi variable 
 				//    (look at step 3 for a clue).
 				//    HINT: use charAt(0) to get 1st char of user input String 
-				int v = Integer.parseInt(value);
-				if (v==pi.charAt(i)) {
+				if (value.equals(pi.charAt(i)+"")) {
 					// 7. If they are correct, print out "correct".
 					JOptionPane.showMessageDialog(null, "Correct!");
+					System.out.print(pi.charAt(i));
 				}
 					// 8. If they are not, print out "incorrect" and tell them
 					//    to start over. Use 'break;' to break out of the loop.
 				else {
 					JOptionPane.showMessageDialog(null, "Incorrect, start over.");
+					System.out.print(pi.charAt(i));
 					break;
 				}
 			}
+			JOptionPane.showMessageDialog(null, "You won!");
 		}
 	}
